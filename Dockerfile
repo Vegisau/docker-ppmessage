@@ -15,7 +15,7 @@ RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak \
 VOLUME /data
 WORKDIR /app
 
-RUN git clone https://github.com/longyunrui/ppmessage.git \
+RUN git clone https://github.com/vegisau/ppmessage.git \
     && cd /app/ppmessage/ppmessage/scripts/ \
     && bash set-up-ppmessage-on-debian-or-ubuntu.sh
 
@@ -23,7 +23,7 @@ RUN git clone https://github.com/longyunrui/ppmessage.git \
 RUN cd /tmp \
     && curl --progress --remote-name http://nginx.org/download/nginx-1.9.15.tar.gz \
     && git clone https://github.com/fdintino/nginx-upload-module \
-    && cd nginx-upload-module && git checkout 2.2 && cd ../ \
+    && cd nginx-upload-module && git checkout 2.255 && cd ../ \
     && tar -xzvf nginx-1.9.15.tar.gz \
     && cd nginx-1.9.15 \
     && ./configure --with-http_ssl_module --add-module=../nginx-upload-module \
